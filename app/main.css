@@ -1,0 +1,11 @@
+body {
+  padding-top: 50px;
+}
+.main-content {
+  padding: 40px 15px;
+}
+
+.grid {
+  width: 500px;
+  height: 250px;
+}

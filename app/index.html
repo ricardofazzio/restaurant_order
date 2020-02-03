@@ -1,0 +1,78 @@
+<!DOCTYPE html >
+<html lang="en"
+      ng-app="order">
+<head >
+	<title >Restaurant Order App</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css"
+		  rel="stylesheet" >
+	<link href="../libs/ladda/dist/ladda-themeless.min.css"
+	      rel="stylesheet" >
+	<link href="main.css"
+	      rel="stylesheet" >
+</head >
+
+<body >
+
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="container" >
+		<div class="navbar-header" >
+			<a class="navbar-brand"
+			   href="/" >Restaurant Order App
+			</a >
+		</div >
+		,
+	</div >
+</nav >
+
+<div class="container main-content" ng-controller="orderCtrl">
+
+	<form ng-submit="onSubmit(formModel.name)">
+		<div class="form-group" >
+			<label for="name" >Entrada</label >
+			<input type="text"
+			       class="form-control"
+			       ng-model="formModel.name"
+				   id="input"
+				   name="input" >
+		</div >
+
+		<div class="form-group" >
+			<label for="email" >Saída</label >
+			<input type="text"
+				   readOnly
+			       class="form-control"
+			       ng-model="formModel.output"
+				   id="output"
+				   name="output" >
+		</div >
+
+		<div class="form-group" >
+			<button class="btn btn-primary" ladda="submitting" data-style="expand-right" type="submit">
+				<span ng-show = "submitting">Registering</span>
+				<span ng-show = "!submitting">Register</span>
+			</button >
+		</div >
+
+		<div ui-grid="{ data: gridData }" class=""></div>
+
+		<pre>{{ formModel | json }} </pre>
+		<pre>{{ formModel.name  | json }} </pre>
+		<pre>{{ formModel.email  | json }} </pre>
+
+	</form >
+
+</div >
+
+<link rel="styleSheet" href="../libs/angular-grid/ui-grid.min.css"/>
+<script src="../libs/angular/angular.min.js" ></script >
+<script src="../libs/angular-grid/ui-grid.core.min.js"></script>
+<script src="../libs/ladda/dist/spin.min.js"></script>
+<script src="../libs/ladda/dist/ladda.min.js"></script>
+<script src="../libs/angular-ladda/dist/angular-ladda.min.js"></script>
+<script src="main.js" ></script >
+
+
+	
+
+</body >
+</html >
